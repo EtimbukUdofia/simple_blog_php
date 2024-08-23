@@ -26,4 +26,10 @@ class Database{
   public function findAll(){
     return $this->statement->fetchAll();
   }
+
+  public function findOrFail(){
+    $result = $this->statement->find();
+
+    return !$result ? abort() : $result;
+  }
 }
