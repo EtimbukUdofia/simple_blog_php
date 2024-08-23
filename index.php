@@ -1,6 +1,5 @@
 <?php
 
-use core\Database;
 use core\Router;
 
 require("core/functions.php");
@@ -20,13 +19,3 @@ $uri = $_SERVER["REQUEST_URI"];
 $method = $_SERVER["REQUEST_METHOD"];
 
 $router->route($uri, $method);
-// function handleRoute($uri, $routes)
-// {
-//   if (array_key_exists($uri, $routes)) {
-//     require($routes[$uri]);
-//   } else {
-//     dd("404");
-//   }
-// }
-
-// handleRoute($_SERVER["REQUEST_URI"], $routes);
