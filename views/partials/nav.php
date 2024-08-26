@@ -10,9 +10,10 @@
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a href="/" class="<?= UrlIs("/") ? "bg-gray-900 text-white" : "text-gray-300"; ?> hover:bg-gray-700 rounded-md  px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
                 <a href="/about" class="<?= UrlIs("/about") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">About</a>
-                <?php if($_SESSION["user"] ?? false): ?>
-                  <a href="/blogs" class="<?= UrlIs("/notes") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Blogs</a>
+                <?php if ($_SESSION["user"] ?? false): ?>
+                  <a href="/blogs" class="<?= UrlIs("/blogs") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Blogs</a>
                 <?php endif; ?>
+                <a href="/blogs" class="<?= UrlIs("/blogs") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Blogs</a>
                 <a href="/contact" class="<?= UrlIs("/contact") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Contact</a>
               </div>
             </div>
@@ -60,7 +61,7 @@
                 </div> -->
               </div>
 
-              <?php if($_SESSION["user"] ?? false): ?>
+              <?php if ($_SESSION["user"] ?? false): ?>
                 <div class="ml-3">
                   <form action="/sessions" method="POST">
                     <input type="hidden" name="_method" value="DELETE" />
