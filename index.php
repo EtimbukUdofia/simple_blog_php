@@ -3,13 +3,13 @@
 use core\Router;
 
 require("core/functions.php");
-$config = require("config.php");
 
 spl_autoload_register(function($classname){
   $classname = str_replace("\\", DIRECTORY_SEPARATOR, $classname);
   require $classname . ".php";
 });
 
+require("bootstrap.php");
 
 $router = new Router();
 
