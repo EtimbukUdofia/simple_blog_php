@@ -1,9 +1,9 @@
 <?php
 
 
-$router->get("/", "index.php");
-$router->get("/about", "about.php");
-$router->get("/contact", "contact.php");
+$router->get("/", "index.php"); //done
+$router->get("/about", "about.php"); //done
+$router->get("/contact", "contact.php"); //done
 
 // blogs
 $router->get("/blogs", "blogs/index.php");
