@@ -28,7 +28,7 @@ class Database{
   }
 
   public function findOrFail(){
-    $result = $this->statement->find();
+    $result = $this->find();
 
     return !$result ? abort() : $result;
   }
