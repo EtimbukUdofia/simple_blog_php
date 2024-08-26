@@ -39,7 +39,7 @@ class Router{
   public function route($uri, $method){
     foreach ($this->routes as $route){
       if($route["uri"] === $uri && $route["method"] === strtoupper($method)){
-        require "controllers/" . $route["controller"];
+        return require "controllers/" . $route["controller"];
       }
     }
     $this->abort();
