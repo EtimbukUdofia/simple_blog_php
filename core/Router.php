@@ -38,10 +38,17 @@ class Router{
 
   public function route($uri, $method){
     foreach ($this->routes as $route){
-      if($route["uri"] == $uri && $route["method"] == $method){
+      if($route["uri"] === $uri && $route["method"] === strtoupper($method)){
         require "controllers/" . $route["controller"];
       }
     }
+    $this->abort();
+  }
+
+  protected function abort($statusCode = Response::NOT_FOUND){
+    http_response_code($statusCode);
+    require "views/{$statusCode}.php";
+    die();
   }
 
 }
