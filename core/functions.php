@@ -26,3 +26,8 @@ function formatDate($value){
   $year = date("Y", strtotime($value));
   return "$day $month, $year";
 }
+
+function redirect($url){
+  header("location: $url");
+  exit();
+}
