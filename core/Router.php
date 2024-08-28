@@ -51,4 +51,7 @@ class Router{
     die();
   }
 
+  public function previuosUrl(){
+    return $_SERVER["HTTP_REFERER"];
+  }
 }
