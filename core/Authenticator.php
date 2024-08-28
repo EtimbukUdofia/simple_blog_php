@@ -6,14 +6,14 @@ class Authenticator{
   public function attempt($email, $password){
     $user = App::resolve(Database::class)->query("SELECT * FROM users WHERE email = :email", [
       "email" => $email
-    ]);
+    ])->find();
 
     // compare password
     if($user){
       if(password_verify($password, $user["password"])){
         $this->login([
           "email" => $email,
-          "password" => $password,
+          "username" => $user["username"],
           "id" => $user["id"]
         ]);
 
