@@ -19,3 +19,8 @@ $router->get("/blog/edit", "blogs/edit.php");
 //registration
 $router->get("/register", "registration/create.php");
 $router->post("/register", "registration/store.php");
+
+//login
+$router->get("/login", "registration/create.php");
+$router->post("/sessions", "registration/store.php");
+$router->delete("/sessions", "registration/destroy.php");
