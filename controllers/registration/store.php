@@ -27,7 +27,7 @@ $user = $db->query("SELECT * FROM users WHERE username = :username", [
 ])->find();
 
 if($mail){
-  $form->error("email", "This email address in already associated with an account");
+  $form->error("email", "This email address in already associated with an account")->throw();
 }
 
 if($user){
