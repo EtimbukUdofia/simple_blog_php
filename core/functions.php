@@ -31,3 +31,7 @@ function redirect($url){
   header("location: $url");
   exit();
 }
+
+function old($key, $default=""){
+  return core\Session::get("old")[$key] ?? $default;
+}
