@@ -21,6 +21,6 @@ $router->get("/register", "registration/create.php");
 $router->post("/register", "registration/store.php");
 
 //login
-$router->get("/login", "registration/create.php");
-$router->post("/sessions", "registration/store.php");
-$router->delete("/sessions", "registration/destroy.php");
+$router->get("/login", "sessions/create.php");
+$router->post("/sessions", "sessions/store.php");
+$router->delete("/sessions", "sessions/destroy.php");
