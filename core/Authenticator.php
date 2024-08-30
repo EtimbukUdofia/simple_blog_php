@@ -14,7 +14,8 @@ class Authenticator{
         $this->login([
           "email" => $email,
           "username" => $user["username"],
-          "id" => $user["id"]
+          "id" => $user["id"],
+          "profile_pic" => $user["profile_pic"]
         ]);
 
         return true;
@@ -28,9 +29,14 @@ class Authenticator{
     Session::put("user", [
       "email" => $user["email"],
       "username" => $user["username"],
-      "id" => $user["id"]
+      "id" => $user["id"],
+      "profile_pic" => $user["profile_pic"]
     ]);
 
     session_regenerate_id(true);
+  }
+
+  public function logout(){
+    Session::destroy();
   }
 }

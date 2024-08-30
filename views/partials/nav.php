@@ -11,7 +11,7 @@
                 <a href="/" class="<?= UrlIs("/") ? "bg-gray-900 text-white" : "text-gray-300"; ?> hover:bg-gray-700 rounded-md  px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
                 <a href="/about" class="<?= UrlIs("/about") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">About</a>
                 <?php if ($_SESSION["user"] ?? false): ?>
-                  <a href="/blogs" class="<?= UrlIs("/blogs") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Blogs</a>
+                  <a href="/blogs" class="<?= UrlIs("/blogs") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">My Blogs</a>
                 <?php endif; ?>
                 <a href="/blogs" class="<?= UrlIs("/blogs") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Blogs</a>
                 <a href="/contact" class="<?= UrlIs("/contact") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Contact</a>
@@ -35,7 +35,7 @@
                     <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                       <span class="absolute -inset-1.5"></span>
                       <span class="sr-only">Open user menu</span>
-                      <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                      <img class="h-8 w-8 rounded-full" src="<?= $_SESSION["user"]["profile_pic"] ?? "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" ?>" alt="profile picture">
                     </button>
                   <?php else : ?>
                     <a href="/register" class="<?= UrlIs("/register") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Register</a>

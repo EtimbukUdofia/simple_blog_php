@@ -8,11 +8,13 @@ use Forms\RegisterForm;
 $username = $_POST["username"];
 $email = $_POST["email"];
 $password = $_POST["password"];
+$gender = $_POST["gender"];
 
 $form = RegisterForm::validate($attributes = [
   "username" => $_POST["username"],
   "email" => $_POST["email"],
-  "password" => $_POST["password"]
+  "password" => $_POST["password"],
+  "gender" => $_POST["gender"]
 ]);
 
 // check if user exists
@@ -34,11 +36,14 @@ if($user){
   $form->error("username", "This username is already taken please choose a different username")->throw();
 }
 
+$profile_pic = "https://avatar.iran.liara.run/public/$gender?username=$username";
+
 // hash password and store in DB
-$db->query("INSERT INTO users(username, email, password) VALUES(:username, :email, :password)", [
+$db->query("INSERT INTO users(username, email, password, profile_pic) VALUES(:username, :email, :password, :profile_pic)", [
   "username" => $username,
   "email" => $email,
-  "password" => password_hash($password, PASSWORD_BCRYPT)
+  "password" => password_hash($password, PASSWORD_BCRYPT),
+  "profile_pic" => $profile_pic
 ]);
 
 // login and redirect
@@ -46,7 +51,8 @@ $db->query("INSERT INTO users(username, email, password) VALUES(:username, :emai
 (new Authenticator)->login([
   "username" => $username,
   "email" => $email,
-  "password" => $password
+  "password" => $password,
+  "profile_pic" => $profile_pic
 ]);
 
 header("location: /");

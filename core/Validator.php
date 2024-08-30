@@ -11,4 +11,9 @@ class Validator{
     $value = trim($value);
     return strlen($value) > $min && strlen($value) < $max;
   }
+
+  public static function radioBtn($value){
+    $default = ["girl", "boy"];
+    return in_array($value, $default);
+  }
 }

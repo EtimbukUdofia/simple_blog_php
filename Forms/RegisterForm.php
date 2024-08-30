@@ -23,6 +23,11 @@ class RegisterForm{
     if (!Validator::string($attributes["password"], 7)) {
       $this->errors["password"] = "Please provide a password of at least 8 characters";
     }
+
+    // validate radio button input
+    if (!Validator::radioBtn($attributes["gender"])) {
+      $this->errors["gender"] = "Please select a valid gender";
+    }
   }
 
   public static function validate($attributes){

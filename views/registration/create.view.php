@@ -16,7 +16,7 @@
         <div>
           <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
           <div class="mt-2">
-            <input id="username" name="username" type="text" autocomplete="username"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="<?= old("username") ?>">
+            <input id="username" name="username" type="text" autocomplete="username" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="<?= old("username") ?>">
           </div>
           <?php if (isset($errors["username"])): ?>
             <p class="text-red-500 text-xs mt-2"><?= $errors["username"] ?></p>
@@ -26,7 +26,7 @@
         <div>
           <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
           <div class="mt-2">
-            <input id="email" name="email" type="email" autocomplete="email"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="<?= old("email") ?>">
+            <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="<?= old("email") ?>">
           </div>
           <?php if (isset($errors["email"])): ?>
             <p class="text-red-500 text-xs mt-2"><?= $errors["email"] ?></p>
@@ -41,10 +41,30 @@
             </div> -->
           </div>
           <div class="mt-2">
-            <input id="password" name="password" type="password" autocomplete="current-password"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input id="password" name="password" type="password" autocomplete="current-password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
           <?php if (isset($errors["password"])): ?>
             <p class="text-red-500 text-xs mt-2"><?= $errors["password"] ?></p>
+          <?php endif; ?>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="gender" class="block text-sm font-medium leading-6 text-gray-900">Gender</label>
+          </div>
+
+          <div class="mt-2">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="boy" required>
+          </div>
+
+          <div class="mt-2">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female" value="girl" required>
+          </div>
+
+          <?php if (isset($errors["gender"])): ?>
+            <p class="text-red-500 text-xs mt-2"><?= $errors["gender"] ?></p>
           <?php endif; ?>
         </div>
 
