@@ -17,10 +17,10 @@ $router->delete("/blog", "blogs/destroy.php");
 $router->get("/blog/edit", "blogs/edit.php");
 
 //registration
-$router->get("/register", "registration/create.php");
-$router->post("/register", "registration/store.php");
+$router->get("/register", "registration/create.php")->only("guest");
+$router->post("/register", "registration/store.php")->only("guest");
 
 //login
-$router->get("/login", "sessions/create.php");
-$router->post("/sessions", "sessions/store.php");
-$router->delete("/sessions", "sessions/destroy.php");
+$router->get("/login", "sessions/create.php")->only("guest");
+$router->post("/sessions", "sessions/store.php")->only("guest");
+$router->delete("/sessions", "sessions/destroy.php")->only("auth");
