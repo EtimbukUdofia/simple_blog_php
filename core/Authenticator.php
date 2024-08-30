@@ -14,7 +14,7 @@ class Authenticator{
         $this->login([
           "email" => $email,
           "username" => $user["username"],
-          "id" => $user["id"],
+          "user_id" => $user["user_id"],
           "profile_pic" => $user["profile_pic"]
         ]);
 
@@ -29,7 +29,7 @@ class Authenticator{
     Session::put("user", [
       "email" => $user["email"],
       "username" => $user["username"],
-      "id" => $user["id"],
+      "id" => $user["user_id"],
       "profile_pic" => $user["profile_pic"]
     ]);
 

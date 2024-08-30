@@ -47,13 +47,7 @@ $db->query("INSERT INTO users(username, email, password, profile_pic) VALUES(:us
 ]);
 
 // login and redirect
-
-(new Authenticator)->login([
-  "username" => $username,
-  "email" => $email,
-  "password" => $password,
-  "profile_pic" => $profile_pic
-]);
+(new Authenticator)->attempt($email, $password);
 
 header("location: /");
 exit();
