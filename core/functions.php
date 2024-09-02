@@ -15,7 +15,7 @@ function UrlIs($uri){
 }
 
 function abort($code = Response::NOT_FOUND){
-  return "views/{$code}.php";
+  require "views/{$code}.php";
   die();
 }
 
@@ -34,4 +34,10 @@ function redirect($url){
 
 function old($key, $default=""){
   return core\Session::get("old")[$key] ?? $default;
+}
+
+function authorize($condition, $status = Response::FORBIDDEN){
+  if(! $condition){
+    abort($status);
+  }
 }
