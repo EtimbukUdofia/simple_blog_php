@@ -368,7 +368,7 @@
 
         </div>
         <div class="">
-          <a href="/notes/create" class="text-blue-900 hover:underline">Create Note</a>
+          <a href="/myblogs/create" class="text-blue-900 hover:underline">Create Blog</a>
         </div>
         <ul class="cs-card-group">
           <?php foreach ($posts as $post): ?>
