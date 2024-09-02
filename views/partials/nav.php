@@ -11,7 +11,7 @@
                 <a href="/" class="<?= UrlIs("/") ? "bg-gray-900 text-white" : "text-gray-300"; ?> hover:bg-gray-700 rounded-md  px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
                 <a href="/about" class="<?= UrlIs("/about") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">About</a>
                 <?php if ($_SESSION["user"] ?? false): ?>
-                  <a href="/blogs" class="<?= UrlIs("/blogs") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">My Blogs</a>
+                  <a href="/myblogs" class="<?= UrlIs("/myblogs") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">My Blogs</a>
                 <?php endif; ?>
                 <a href="/blogs" class="<?= UrlIs("/blogs") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Blogs</a>
                 <a href="/contact" class="<?= UrlIs("/contact") ? "bg-gray-900 text-white" : "text-gray-300"; ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Contact</a>
