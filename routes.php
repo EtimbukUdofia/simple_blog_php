@@ -16,6 +16,17 @@ $router->patch("/blog", "blogs/update.php");
 $router->delete("/blog", "blogs/destroy.php");
 $router->get("/blog/edit", "blogs/edit.php");
 
+//myblogs
+$router->get("/myblogs", "myblogs/index.php")->only("auth");
+$router->get("/myblogs", "myblogs/create.php")->only("auth");
+$router->post("/myblogs", "myblogs/store.php")->only("auth");
+
+//myblog
+$router->get("/myblog", "myblogs/show.php")->only("auth");
+$router->get("/myblog", "myblogs/edit.php")->only("auth");
+$router->patch("/myblog", "myblogs/update.php")->only("auth");
+$router->delete("/myblog", "myblogs/destroy.php")->only("auth");
+
 //registration
 $router->get("/register", "registration/create.php")->only("guest");
 $router->post("/register", "registration/store.php")->only("guest");
