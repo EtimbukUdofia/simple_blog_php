@@ -5,9 +5,7 @@ namespace Forms;
 use core\ValidationException;
 use core\Validator;
 
-class RegisterForm{
-  protected $errors = [];
-
+class RegisterForm extends Form{
   public function __construct(public array $attributes)
   {
     //validate username
@@ -28,28 +26,5 @@ class RegisterForm{
     if (!Validator::radioBtn($attributes["gender"])) {
       $this->errors["gender"] = "Please select a valid gender";
     }
-  }
-
-  public static function validate($attributes){
-    $instance = new static($attributes);
-
-    return $instance->failed() ? $instance->throw() : $instance;
-  }
-
-  public function failed(){
-    return count($this->errors);
-  }
-
-  public function throw(){
-    ValidationException::throw($this->errors(), $this->attributes);
-  }
-
-  public function errors(){
-    return $this->errors;
-  }
-
-  public function error($type, $message){
-    $this->errors[$type] = $message;
-    return $this;
   }
 }
